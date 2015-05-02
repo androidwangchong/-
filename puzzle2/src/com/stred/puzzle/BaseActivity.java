@@ -16,7 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-
+   
 public class BaseActivity extends ExitActivity {
 	AlertDialog selectImgDialog;
 	static final int REQUEST_CODE_IMG = 0;
