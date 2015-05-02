@@ -1,4 +1,4 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import java.util.ArrayList;
 import java.util.List;

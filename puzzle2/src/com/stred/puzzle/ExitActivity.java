@@ -1,4 +1,4 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import android.app.Activity;
 import android.os.Bundle;

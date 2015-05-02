@@ -1,4 +1,4 @@
-package com.qjl.util.screen;
+package com.stred.util.screen;
 
 public class ScreenSize {
 	private int width;

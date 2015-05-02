@@ -1,8 +1,9 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import java.io.File;
 
-import com.qjl.util.screen.ScreenUtil;
+import com.qjl.puzzle.R;
+import com.stred.util.screen.ScreenUtil;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import android.view.animation.Animation;
 import android.view.animation.Transformation;

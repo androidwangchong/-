@@ -4,45 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/puzzleView" 
-    
-    >
-        >
-         <com.qjl.puzzle.PuzzleView
-   android:layoutAnimation="@anim/layout_grid_inverse_fade"
-   android:id="@+id/puzzleviewFit"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   android:visibility="invisible"
-   >
-       
-   </com.qjl.puzzle.PuzzleView>
-    <com.qjl.puzzle.PuzzleView
-   android:layoutAnimation="@anim/layout_grid_inverse_fade"
-   android:id="@+id/puzzleviewScreen"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
- 
-   >
-       
-   </com.qjl.puzzle.PuzzleView>
-        </RelativeLayout>
-  
-  <ImageView 
-        android:clickable="true"
+
+    <RelativeLayout
+        android:id="@+id/puzzleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+        <com.stred.puzzle.PuzzleView
+            android:id="@+id/puzzleviewFit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/layout_grid_inverse_fade"
+            android:visibility="invisible" >
+        </com.stred.puzzle.PuzzleView>
+
+        <com.stred.puzzle.PuzzleView
+            android:id="@+id/puzzleviewScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/layout_grid_inverse_fade" >
+        </com.stred.puzzle.PuzzleView>
+    </RelativeLayout>
+
+    <ImageView
         android:id="@+id/originalPicView"
-        android:scaleType="fitCenter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="true"
+        android:scaleType="fitCenter"
         android:visibility="gone" />
-  <TextView 
-      android:id="@+id/gameOvelLabel"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:gravity="center"
-      android:visibility="invisible"
-      />
+
+    <TextView
+        android:id="@+id/gameOvelLabel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="invisible" />
+
 </LinearLayout>

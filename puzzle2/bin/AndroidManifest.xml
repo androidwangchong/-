@@ -10,7 +10,7 @@
         android:icon="@drawable/stage2_1"
         android:label="@string/app_name" >
         <activity
-            android:name=".PuzzleActivity"
+            android:name="com.stred.puzzle.PuzzleActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PuzzleImgActivity"
+            android:name="com.stred.puzzle.PuzzleImgActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OptionsActivity"
+            android:name="com.stred.puzzle.OptionsActivity"
             android:label="@string/optionsTitle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TestActivity"
+            android:name="com.stred.puzzle.TestActivity"
             android:label="@string/optionsTitle"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>

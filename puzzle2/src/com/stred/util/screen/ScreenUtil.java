@@ -1,4 +1,4 @@
-package com.qjl.util.screen;
+package com.stred.util.screen;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

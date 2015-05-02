@@ -1,5 +1,7 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
+
+import com.qjl.puzzle.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -77,7 +79,7 @@ public class OptionsActivity extends ExitActivity {
 		
 	}
 	/*
-	 * ½«ÉèÖÃºÃµÄÐÐÊýºÍÁÐÊý·µ»Ø¸øÆ´Í¼½çÃæ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ÃºÃµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½Æ´Í¼ï¿½ï¿½ï¿½ï¿½
 	 */
 	private void sendNewLevelBackToPuzzleView(){
 		Intent intent = new Intent();
@@ -93,7 +95,7 @@ public class OptionsActivity extends ExitActivity {
 		 
 	}
 	/*
-	 * ³õÊ¼»¯ÁÐÊýºÍÐÐÊýµÄÑ¡ÔñÁÐ±í
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ð±ï¿½
 	 */
 	private void initAdapter() {
 		    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(

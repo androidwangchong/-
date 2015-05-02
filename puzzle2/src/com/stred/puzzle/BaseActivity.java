@@ -1,9 +1,11 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.qjl.puzzle.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -32,7 +34,7 @@ public class BaseActivity extends ExitActivity {
 	}
 
 	/*
-	 * Ñ¡ÔñÍ¼Æ¬
+	 * Ñ¡ï¿½ï¿½Í¼Æ¬
 	 */
 	void showSelectImgDialog() {
 		if (selectImgDialog == null) {
@@ -62,7 +64,7 @@ public class BaseActivity extends ExitActivity {
 	}
 
 	/*
-	 * ´ò¿ªÕÕÏà»úÀ´»ñÈ¡ÐÂµÄÍ¼Æ¬½øÐÐÆ´Í¼
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Âµï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Æ´Í¼
 	 */
 	void startCaptureActivity() {
 		if (GameConfig.DIR_CAPTURE_PIC == null) {
@@ -81,7 +83,7 @@ public class BaseActivity extends ExitActivity {
 	}
 
 	/*
-	 * »ñÈ¡ÐÂµÄÍ¼Æ¬µÄURI
+	 * ï¿½ï¿½È¡ï¿½Âµï¿½Í¼Æ¬ï¿½ï¿½URI
 	 */
 	Uri getNewPicUri() {
 		String currPicName = GameConfig.CAPTURE_PIC_PREFIX
@@ -99,7 +101,7 @@ public class BaseActivity extends ExitActivity {
 	}
 
 	/*
-	 * ³õÊ¼»¯ÕÕÏà»úËùÅÄÕÕÆ¬µÄ±£´æÄ¿Â¼
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½Ä±ï¿½ï¿½ï¿½Ä¿Â¼
 	 */
 	void initCapturePicDir() {
 		try {
@@ -118,7 +120,7 @@ public class BaseActivity extends ExitActivity {
 	}
 
 	/*
-	 * ´ò¿ªÍ¼¿âÑ¡Ôñ
+	 * ï¿½ï¿½Í¼ï¿½ï¿½Ñ¡ï¿½ï¿½
 	 */
 	void startImgContentActivity() {
 		Intent imgIntent = new Intent(Intent.ACTION_GET_CONTENT);

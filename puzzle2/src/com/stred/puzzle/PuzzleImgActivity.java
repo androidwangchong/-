@@ -1,14 +1,14 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.qjl.util.screen.ScreenUtil;
+import com.qjl.puzzle.R;
+import com.stred.util.screen.ScreenUtil;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -33,17 +33,17 @@ import android.widget.ImageView;
 public class PuzzleImgActivity extends BaseActivity {
 	private Bitmap imgBitmapForFit = null;
 	private Bitmap imgBitmapForScreen = null;
-	private PuzzleView puzzleViewScreen = null;// ¸ºÔðÆ´Í¼µÄview ÆÌÂúÆÁÄ»
-	private PuzzleView puzzleViewFit = null;//¸ºÔðÆ´Í¼µÄview ×îºÏÊÊ´óÐ¡
-	private Uri imgUri = null;// Æ´Í¼ËùÐèÍ¼Æ¬µÄUri
-	private View puzzleLaoyut;//Æ´Í¼µÄview ÆäÖÐ°üº¬ÁËÆÌÂúÆÁÄ»µÄÒ»¸övewºÍ×îºÏÊÊ´óÐ¡µÄÒ»¸öview
+	private PuzzleView puzzleViewScreen = null;// ï¿½ï¿½ï¿½ï¿½Æ´Í¼ï¿½ï¿½view ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»
+	private PuzzleView puzzleViewFit = null;//ï¿½ï¿½ï¿½ï¿½Æ´Í¼ï¿½ï¿½view ï¿½ï¿½ï¿½ï¿½Ê´ï¿½Ð¡
+	private Uri imgUri = null;// Æ´Í¼ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Uri
+	private View puzzleLaoyut;//Æ´Í¼ï¿½ï¿½view ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½Ò»ï¿½ï¿½vewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê´ï¿½Ð¡ï¿½ï¿½Ò»ï¿½ï¿½view
 	private static DisplayMetrics screenMetric = null;
 	private static BitmapFactory.Options bitmapOptions;
-	private ImageView originalPicView = null;// ÏÔÊ¾Ô­Ê¼Í¼Æ¬µÄview
+	private ImageView originalPicView = null;// ï¿½ï¿½Ê¾Ô­Ê¼Í¼Æ¬ï¿½ï¿½view
 	private Menu menu;
-    private boolean scaleScreen = GameConfig.SCALE_SCREEN;//ÊÇ·ñÆÌÂúÆÁÄ»
-    private PuzzleView puzzleView;//ÒýÓÃµ±Ç°Æ´Í¼µÄview
-    private boolean showBadge = false;//ÊÇ·ñÏÔÊ¾Í¼Æ¬±ê¼Ç
+    private boolean scaleScreen = GameConfig.SCALE_SCREEN;//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»
+    private PuzzleView puzzleView;//ï¿½ï¿½ï¿½Ãµï¿½Ç°Æ´Í¼ï¿½ï¿½view
+    private boolean showBadge = false;//ï¿½Ç·ï¿½ï¿½ï¿½Ê¾Í¼Æ¬ï¿½ï¿½ï¿½
     private static final int REQUESTCODE_CHANGELEVEL = 3;
     public static String FROM_PUZZLEVIEW_VAR = "frompuzzlevar";
     public static final String Extra_ROWCOUNT = "optionrowcount";
@@ -81,7 +81,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		if (screenMetric == null)
 			screenMetric = ScreenUtil.getScreenSize(this);
 
-		requestWindowFeature(Window.FEATURE_NO_TITLE);// È¥µô±êÌâÀ¸
+		requestWindowFeature(Window.FEATURE_NO_TITLE);// È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		bitmapOptions.inPreferredConfig = Bitmap.Config.ARGB_4444;
@@ -91,7 +91,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	}
 
 	/*
-	 * ³õÊ¼»¯Æ´Í¼µÄview
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½Æ´Í¼ï¿½ï¿½view
 	 */
 	private void initPuzzleView() {
 		puzzleView.renderPuzzleImage(this.isScaleScreen()?imgBitmapForScreen:imgBitmapForFit,null,null);
@@ -99,7 +99,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	}
 
 	/*
-	 * ³õÊ¼»¯ÐèÒª½øÐÐÆ´Í¼µÄÍ¼Æ¬µÄbitmap
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Æ´Í¼ï¿½ï¿½Í¼Æ¬ï¿½ï¿½bitmap
 	 */
 	private void initPuzzlePic() {
 		Bundle extras = getIntent().getExtras();
@@ -109,7 +109,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	}
 
 	/*
-	 * ³õÊ¼»¯ÐèÒªÆ´Í¼µÄÍ¼Æ¬µÄbitmap
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ÒªÆ´Í¼ï¿½ï¿½Í¼Æ¬ï¿½ï¿½bitmap
 	 */
 	private void initSourceBitmap() {
 		InputStream inputStream = null;
@@ -117,14 +117,14 @@ public class PuzzleImgActivity extends BaseActivity {
 			inputStream = getContentResolver().openInputStream(imgUri);
 			bitmapOptions.inJustDecodeBounds = true;
 			bitmapOptions.inSampleSize = 1;
-			// »ñÈ¡Í¼Æ¬µÄ´óÐ¡
+			// ï¿½ï¿½È¡Í¼Æ¬ï¿½Ä´ï¿½Ð¡
 			BitmapFactory.decodeStream(inputStream, null, bitmapOptions);
 			int picWidth = bitmapOptions.outWidth;
 			int picHeight = bitmapOptions.outHeight;
 			
 			boolean rotate = false;
 			/*
-			 * Èç¹ûÊÇºáÏòµÄÍ¼¾ÍÉèÖÃ90¶ÈÐý×ª
+			 * ï¿½ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½90ï¿½ï¿½ï¿½ï¿½×ª
 			 */
 			if(picWidth > picHeight){
 				int tmpwidth = picWidth;
@@ -134,7 +134,7 @@ public class PuzzleImgActivity extends BaseActivity {
 			}
 			
 		
-			// ½«Í¼Æ¬½øÐÐËõ·Å
+			// ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int screenWidth = screenMetric.widthPixels / 10;
 			int screenHeight = screenMetric.heightPixels / 10;
 			float scaleW = (float) picWidth / screenWidth;
@@ -209,7 +209,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	private ViewGroup mContainer;
 
 	/*
-	 * ³õÊ¼»¯¿Ø¼þ
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ø¼ï¿½
 	 */
 	private void initComponent() {
 		puzzleLaoyut = (View) findViewById(R.id.puzzleView);
@@ -233,7 +233,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		});
 	}
 	/*
-	 * ÉèÖÃµ±Ç°Æ´Í¼µÄpuzzleview
+	 * ï¿½ï¿½ï¿½Ãµï¿½Ç°Æ´Í¼ï¿½ï¿½puzzleview
 	 */
 	private void setPuzzleView(){
 		if(this.isScaleScreen()){
@@ -251,7 +251,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	}
 
 	/*
-	 * ´´½¨menu
+	 * ï¿½ï¿½ï¿½ï¿½menu
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -328,7 +328,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		return true;
 	}
 	/*
-	 * ÉèÖÃ
+	 * ï¿½ï¿½ï¿½ï¿½
 	 */
 	private void startChangeLevelIntent() {
 	 Intent intent = new Intent(this,OptionsActivity.class);
@@ -383,7 +383,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		}
 	}
 	/*
-	 * äÖÈ¾ÐÂµÄÍ¼Æ¬
+	 * ï¿½ï¿½È¾ï¿½Âµï¿½Í¼Æ¬
 	 */
 	private void renderNewImage(Uri imgUri){
 		this.imgUri = imgUri;
@@ -396,7 +396,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		
 	}
 	/*
-	 * ÏÔÊ¾Æ´Í¼view
+	 * ï¿½ï¿½Ê¾Æ´Í¼view
 	 */
 	private void showPuzzleView(){
 		applyRotation(false, 180, 90);
@@ -406,7 +406,7 @@ public class PuzzleImgActivity extends BaseActivity {
   
 
 	/*
-     * ½«Í¼Æ¬äÖÈ¾ÎªºÏÊÊ´óÐ¡
+     * ï¿½ï¿½Í¼Æ¬ï¿½ï¿½È¾Îªï¿½ï¿½ï¿½Ê´ï¿½Ð¡
      */
 	private void scaleImgFit() {
 		 
@@ -439,7 +439,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		 menu.findItem(R.id.scaleScreen).setVisible(!isScreen);
 	}
 	/*
-	 * ½«Í¼Æ¬äÖÈ¾ÎªÕû¸öÆÁÄ»
+	 * ï¿½ï¿½Í¼Æ¬ï¿½ï¿½È¾Îªï¿½ï¿½ï¿½ï¿½ï¿½Ä»
 	 */
 	private void scaleImgScreen(){
 		 initScalScreenMenu(true);
@@ -459,7 +459,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	}
 
 	/*
-	 * ÖØÐÂ¿ªÊ¼ÓÎÏ·
+	 * ï¿½ï¿½ï¿½Â¿ï¿½Ê¼ï¿½ï¿½Ï·
 	 */
 	private void restartGame() {
 		puzzleView.resetEmpayPosition();

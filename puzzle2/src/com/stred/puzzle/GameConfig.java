@@ -1,13 +1,13 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
 public class GameConfig {
-	public static  int COLUMNCOUNT = 3;// Æ´Í¼ÇÐÍ¼µÄÐÐÊý
-	public static  int ROWCOUNT = 3;// Æ´Í¼ÇÐÍ¼µÄÁÐÊý
-	public static  boolean SCALE_SCREEN = true;//ÊÇ·ñäÖÈ¾Õû¸öÆÁÄ»
+	public static  int COLUMNCOUNT = 3;// Æ´Í¼ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public static  int ROWCOUNT = 3;// Æ´Í¼ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public static  boolean SCALE_SCREEN = true;//ï¿½Ç·ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½ï¿½ï¿½Ä»
 	public static String DIR_CAPTURE_PIC = null;
 	public static final String CONFIG_FILENAME = "config";
 	private static final String CONFIG_COLUMANCOUNT = "columncount";

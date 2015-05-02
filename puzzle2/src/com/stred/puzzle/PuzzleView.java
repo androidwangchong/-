@@ -1,7 +1,9 @@
-package com.qjl.puzzle;
+package com.stred.puzzle;
 
 import java.text.MessageFormat;
 import java.util.Random;
+
+import com.qjl.puzzle.R;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -24,13 +26,13 @@ public class PuzzleView extends GridView {
 	
  
 	 
-	private Drawable[] lumpDrawables = null;//·Ö¸îºóµÄÍ¼Æ¬Æ¬¶ÎÊý×é
-	private Drawable emptyDrawable = null;//±»È¥µôµÄÍ¼Æ¬Æ¬¶ÎËùÊ¹ÓÃµÄ±³¾°
-	private int[] positionwrap = null;// ´òËãË³ÐòºóµÄÍ¼Æ¬ÇÐÆ¬Ë÷Òý
-	private int moveCount = 0;//Ò»¶¨Í¼Æ¬µÄ´ÎÊý
+	private Drawable[] lumpDrawables = null;//ï¿½Ö¸ï¿½ï¿½ï¿½Í¼Æ¬Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Drawable emptyDrawable = null;//ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½Í¼Æ¬Æ¬ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ÃµÄ±ï¿½ï¿½ï¿½
+	private int[] positionwrap = null;// ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½
+	private int moveCount = 0;//Ò»ï¿½ï¿½Í¼Æ¬ï¿½Ä´ï¿½ï¿½ï¿½
 	//private Toast successToast = null;
-	private int rowCount = GameConfig.ROWCOUNT;//·Ö¸îÍ¼Æ¬µÄÐÐÊý
-	private int columnCount = GameConfig.COLUMNCOUNT;//·Ö¸îÍ¼Æ¬µÄÁÐÊý
+	private int rowCount = GameConfig.ROWCOUNT;//ï¿½Ö¸ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private int columnCount = GameConfig.COLUMNCOUNT;//ï¿½Ö¸ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getRowCount() {
 		return this.rowCount;
 	}
@@ -63,7 +65,7 @@ public class PuzzleView extends GridView {
 		this.positionwrap = positionwrap;
 	}
 
-	private int emptyPostion = -1;// È¥µôµÄÇÐÆ¬µÄÎ»ÖÃË÷Òý
+	private int emptyPostion = -1;// È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 
 	public int getEmptyPostion() {
 		return this.emptyPostion;
@@ -76,14 +78,14 @@ public class PuzzleView extends GridView {
 		}
 	}
 
-	private Random random = new Random();// ÓÃ»§»ñÈ¡Í¼Æ¬Ëæ»úÎ»ÖÃµÄ
+	private Random random = new Random();// ï¿½Ã»ï¿½ï¿½ï¿½È¡Í¼Æ¬ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½
 	private LumpAdapter adapter = null;
  
-    private TextView[] pieceViews = null;//äÖÈ¾Í¼Æ¬Æ¬¶ÎµÄviewÊý×é
+    private TextView[] pieceViews = null;//ï¿½ï¿½È¾Í¼Æ¬Æ¬ï¿½Îµï¿½viewï¿½ï¿½ï¿½ï¿½
     private int pieceWidth;
     private int pieceHeight;
-    private boolean showBadge = false;//ÊÇ·ñÏÔÊ¾±ê¼Ç
-    private boolean scaleScreen = GameConfig.SCALE_SCREEN;//ÊÇ·ñÆÌÂúÆÁÄ»
+    private boolean showBadge = false;//ï¿½Ç·ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½
+    private boolean scaleScreen = GameConfig.SCALE_SCREEN;//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»
     private boolean hasRendered = false;
     public boolean isHasRendered() {
 		return this.hasRendered;
@@ -116,7 +118,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * ÉèÖÃ µã»÷ÊÂ¼þ»»Í¼Æ¬Î»ÖÃ
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Í¼Æ¬Î»ï¿½ï¿½
 	 */
 	@Override
 	public boolean performItemClick(View view, int position, long id) {
@@ -161,7 +163,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * ÉèÖÃÆ´Í¼Í¼Æ¬
+	 * ï¿½ï¿½ï¿½ï¿½Æ´Í¼Í¼Æ¬
 	 */
 	protected void renderPuzzleImage(Bitmap pluzzleimage,int[] positionwrapAsign,String emptyPostionstr) {
 		pieceWidth = (int) Math.floor(pluzzleimage.getWidth() / columnCount);
@@ -207,14 +209,14 @@ public class PuzzleView extends GridView {
 		}
 	}
 	/*
-	 * ÖØÐÂÉèÖÃemptyPostion
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½emptyPostion
 	 */
 	protected void resetEmpayPosition(){
 		emptyPostion = random.nextInt(positionwrap.length);
 	}
 
 	/*
-	 * ÉèÖÃgrid¿Õ¼äÖÐµÄÍ¼Æ¬
+	 * ï¿½ï¿½ï¿½ï¿½gridï¿½Õ¼ï¿½ï¿½Ðµï¿½Í¼Æ¬
 	 */
 	protected void initImageViews() {
 		int imgIdx = -1;
@@ -237,7 +239,7 @@ public class PuzzleView extends GridView {
 
 	}
 	/*
-	 * ÏÔÊ¾Í¼Æ¬±ê¼Ç
+	 * ï¿½ï¿½Ê¾Í¼Æ¬ï¿½ï¿½ï¿½
 	 */
 	protected void showBadge(){
 		for (int i = 0; i < positionwrap.length; i++) {
@@ -247,7 +249,7 @@ public class PuzzleView extends GridView {
 		 setShowBadge(true);
 	}
 	/*
-	 * Òþ²ØÍ¼Æ¬±ê¼Ç
+	 * ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½
 	 */
 	protected void hideBadge(){
 		for (int i = 0; i < positionwrap.length; i++) {
@@ -257,7 +259,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * ´òËãÍ¼Æ¬Ë³Ðò
+	 * ï¿½ï¿½ï¿½ï¿½Í¼Æ¬Ë³ï¿½ï¿½
 	 */
 	protected void wrapposition() {
 		for (int i = 0; i < 10; i++) {
@@ -273,7 +275,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * ½»»»Á½¸öÇÐÆ¬µÄÎ»ÖÃ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½ï¿½Î»ï¿½ï¿½
 	 */
 	private void wrapPosition(int p1, int p2) {
 		int pv1 = positionwrap[p1];
@@ -283,7 +285,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * ½»»»Á½¸öÎ»ÖÃµÄË÷Òý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private void wrapOneStep(int p1, int p2) {
 		moveCount++;
@@ -322,7 +324,7 @@ public class PuzzleView extends GridView {
     }
 
 	/*
-	 * ³õÊ¼»¯ÒªäÖÈ¾Í¼Æ¬ÇÐÆ¬µÄview
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½Òªï¿½ï¿½È¾Í¼Æ¬ï¿½ï¿½Æ¬ï¿½ï¿½view
 	 */
 	private void initLumpViews() {
 		for (int i = 0; i < lumpDrawables.length; i++) {
@@ -347,7 +349,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * ÊÇ·ñÊÇÔ­Ê¼µÄÆ´Í¼ÇÐÆ¬Ë÷Òý£¬Èç¹ûÊÇÔòËµÃ÷Æ´Í¼³É¹¦
+	 * ï¿½Ç·ï¿½ï¿½ï¿½Ô­Ê¼ï¿½ï¿½Æ´Í¼ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½Æ´Í¼ï¿½É¹ï¿½
 	 */
 	private boolean isOriginalPosition() {
 		boolean rs = true;
@@ -360,7 +362,7 @@ public class PuzzleView extends GridView {
 	}
 
 	/*
-	 * äÖÈ¾Æ´Í¼ÇÐ¿éµÄÊÊÅäÆ÷
+	 * ï¿½ï¿½È¾Æ´Í¼ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	class LumpAdapter extends BaseAdapter {
 
