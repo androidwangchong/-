@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, PuzzleActivity!</string>
+    <string name="app_name">拼图</string>
+    <string name="startGame">开始游戏</string>
+    <string name="gameHelp">游戏帮助</string>
+    <string name="gameOptions">游戏设置</string>
+    <string name="exitGame">退出</string>
+    <string name="selectImg">选择图片</string>
+    <string name="fromDcim">相册</string>
+    <string name="fromCapture">拍照</string>
+    <string name="cancel">取消</string>
+    <string name="optionsColumnLabel">设置拼图分割图片的列数</string>
+    <string name="optionsRowLabel">设置拼图分割图片的行数</string>
+    <string name="optionsIsScaleScreenAbleLabel">是否将图片铺满整个屏幕</string>
+    <string name="optiontsSaveSuccessfullLabel">保存成功</string>
+    <string name="optionsSaveFailedLabel">保存失败</string>
+    <string name="optionsTitle">设置</string>
+    <string name="optionsColumnTitle">列数:</string>
+    <string name="optionsRowTitle">行数:</string>
+    <string name="optionsScaleScreenTitle">铺满屏幕:</string>
+    <string name="mountSDerror">访问SD卡错误，不能创建图片路径。</string>
+    <string name="exitTitle">退出</string>
+    <string name="ExitConfirm">确定要退出?</string>
+    <string name="button_ok">确定</string>
+    <string name="menu_restartGame">重新开始</string>
+    <string name="menu_displayBadge">显示标记</string>
+    <string name="menu_hideBadge">隐藏标记</string>
+    <string name="menu_displayOriginalPic">显示原图</string>
+    <string name="menu_displayPuzzleView">显示拼图</string>
+    <string name="menu_scaleScreen">铺满屏幕</string>
+    <string name="menu_scaleFit">不铺满屏幕</string>
+    <string name="menu_changePic">换图</string>
+    <string name="menu_changeLevel">切换难度</string>
+    <string name="menu_more">更多</string>
+    <string name="moveCountLabel">您一共移动了{0}步</string>
+    <string name="puzzleSuccessfull">拼图成功{0}您一共移动了{1}步</string>
+    <string name="exitCurrentPuzzle">去定要退出当前拼图?</string>
+    
+</resources>

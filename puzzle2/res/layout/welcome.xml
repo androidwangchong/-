@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/stage2_1"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="30dip" >
+
+        <Button
+            android:id="@+id/exitbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/exit" >
+        </Button>
+
+        <Button
+            android:id="@+id/settingbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/exitbutton"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/setting" >
+        </Button>
+
+        <Button
+            android:id="@+id/camerabutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/camera" >
+        </Button>
+
+        <Button
+            android:id="@+id/albumbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/camerabutton"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/album" >
+        </Button>
+    </RelativeLayout>
+    <!--
+    <ImageButton
+        android:id="@+id/startGame"
+        android:layout_width="130dip"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dip"
+        android:background="@drawable/buttonbg"
+        
+        android:padding="13dip"
+        android:text="@string/startGame" />
+
+    <Button
+        android:id="@+id/gameHelp"
+        android:layout_width="130dip"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dip"
+        android:background="@drawable/buttonbg"
+        android:padding="13dip"
+        android:text="@string/gameHelp" />
+
+    <Button
+        android:id="@+id/gameOptions"
+        android:layout_width="130dip"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dip"
+        android:background="@drawable/buttonbg"
+        android:padding="13dip"
+        android:text="@string/gameOptions" />
+
+    <Button
+        android:id="@+id/exitGame"
+        android:layout_width="130dip"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dip"
+        android:background="@drawable/buttonbg"
+        android:padding="13dip"
+        android:text="@string/exitGame" />
+    -->
+
+</LinearLayout>
