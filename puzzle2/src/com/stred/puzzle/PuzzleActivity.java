@@ -2,6 +2,12 @@ package com.stred.puzzle;
 
 import java.io.File;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Fullscreen;
+import org.androidannotations.annotations.NoTitle;
+import org.androidannotations.annotations.ViewById;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -19,26 +25,24 @@ import android.widget.RelativeLayout.LayoutParams;
 
 import com.stred.util.screen.ScreenUtil;
 
+@NoTitle
+@Fullscreen
+@EActivity(R.layout.welcome)
 public class PuzzleActivity extends BaseActivity {
-	/** Called when the activity is first created. */
-	// private Button startButton;
-	// private Button helpButton;
-	private Button cameraButton;
-	private Button albumButton;
-	private Button optionsButton;
-	private Button exitButton;
-	// private Button[] buttons;
+	@ViewById
+	Button camerabutton;
+	@ViewById
+	Button albumbutton;
+	@ViewById
+	Button settingbutton;
+	@ViewById
+	Button exitbutton;
 	private static DisplayMetrics screenMetric = null;
-	// private AlertDialog selectImgDialog;
 	private Animation animationTranslate, animationRotate, animationScale;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.welcome);
-		System.out.println("---------------------onCreate---------------------");
-		initComponent();
+	@AfterViews
+	void init() {
+//		initComponent();
 		initListener();
 		initConfig();
 	}
@@ -51,61 +55,39 @@ public class PuzzleActivity extends BaseActivity {
 
 	}
 
-	protected void onStart() {
-		super.onStart();
-
-	}
-
-	/*
-	 * ��ʼ���ؼ������¼�
-	 */
 	private void initListener() {
 		ButtonAction btnAction = new ButtonAction();
-		cameraButton.setOnClickListener(btnAction);
-		albumButton.setOnClickListener(btnAction);
-		optionsButton.setOnClickListener(btnAction);
-		exitButton.setOnClickListener(btnAction);
+		camerabutton.setOnClickListener(btnAction);
+		albumbutton.setOnClickListener(btnAction);
+		settingbutton.setOnClickListener(btnAction);
+		exitbutton.setOnClickListener(btnAction);
 
 	}
 
-	/*
-	 * ��ʼ���ؼ�
-	 */
 	private void initComponent() {
-		cameraButton = (Button) findViewById(R.id.camerabutton);
-		albumButton = (Button) findViewById(R.id.albumbutton);
-		optionsButton = (Button) findViewById(R.id.settingbutton);
-		exitButton = (Button) findViewById(R.id.exitbutton);
-
 		screenMetric = ScreenUtil.getScreenSize(this);
 		int width = screenMetric.widthPixels;
 		int widthDig = (width - 130) / 3;
 
-		exitButton.startAnimation(animTranslate(widthDig * 3, -50f,
-				widthDig * 3, 0, 0, 0, exitButton, 1000));
-		optionsButton.startAnimation(animTranslate(widthDig * 2, 50f,
-				widthDig * 2, 0, 0, 0, optionsButton, 1000));
-		cameraButton.startAnimation(animTranslate(widthDig, -50f, widthDig, 0,
-				0, 0, cameraButton, 1000));
-		albumButton.startAnimation(animTranslate(0f, 50f, 0, 0, 0, 0,
-				albumButton, 1000));
-
-		// buttons = new Button[4];
-		// buttons[0] = cameraButton;
-		// buttons[1] = albumButton;
-		// buttons[2] = optionsButton;
-		// buttons[3] = exitButton;
+		exitbutton.startAnimation(animTranslate(widthDig * 3, -50f,
+				widthDig * 3, 0, 0, 0, exitbutton, 1000));
+		settingbutton.startAnimation(animTranslate(widthDig * 2, 50f,
+				widthDig * 2, 0, 0, 0, settingbutton, 1000));
+		camerabutton.startAnimation(animTranslate(widthDig, -50f, widthDig, 0,
+				0, 0, camerabutton, 1000));
+		albumbutton.startAnimation(animTranslate(0f, 50f, 0, 0, 0, 0,
+				albumbutton, 1000));
 
 	}
 
 	private void callClickAction(View v) {
-		if (v == cameraButton) {
+		if (v == camerabutton) {
 			startCaptureActivity();
-		} else if (v == albumButton) {
+		} else if (v == albumbutton) {
 			startImgContentActivity();
-		} else if (v == optionsButton) {
+		} else if (v == settingbutton) {
 			showOptions();
-		} else if (v == exitButton) {
+		} else if (v == exitbutton) {
 			exitActivity();
 		}
 
@@ -114,12 +96,6 @@ public class PuzzleActivity extends BaseActivity {
 	protected Animation getScaleAnim(final View v) {
 		Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
 
-		// animationScale = new ScaleAnimation(1f, toX, 1f, toY,
-		// Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.45f);
-		// animationScale.setInterpolator(PuzzleActivity.this,
-		// anim.accelerate_decelerate_interpolator);
-		// animationScale.setDuration(500);
-		// animationScale.setFillAfter(false);
 		shake.setAnimationListener(new AnimationListener() {
 
 			public void onAnimationStart(Animation animation) {
@@ -139,20 +115,6 @@ public class PuzzleActivity extends BaseActivity {
 		return shake;
 
 	}
-
-	// �ƶ��Ķ���Ч��
-	/*
-	 * TranslateAnimation(float fromXDelta, float toXDelta, float fromYDelta,
-	 * float toYDelta)
-	 * 
-	 * float fromXDelta:��������ʾ������ʼ�ĵ��뵱ǰView X����ϵĲ�ֵ��
-	 * 
-	 * ���� * float toXDelta, ��������ʾ��������ĵ��뵱ǰView X����ϵĲ�ֵ��
-	 * 
-	 * ���� * float fromYDelta, ��������ʾ������ʼ�ĵ��뵱ǰView Y����ϵĲ�ֵ��
-	 * 
-	 * ���� * float toYDelta)��������ʾ������ʼ�ĵ��뵱ǰView Y����ϵĲ�ֵ��
-	 */
 	protected Animation animTranslate(float toX, float toY,
 			final int marginLeft, final int marginTop, final int marginRight,
 			final int marginBottom, final Button button, long durationMillis) {
@@ -216,9 +178,6 @@ public class PuzzleActivity extends BaseActivity {
 
 	}
 
-	/*
-	 * ��ʾ���ý���
-	 */
 	private void showOptions() {
 		Intent intent = new Intent(this, OptionsActivity.class);
 		startActivity(intent);
@@ -252,9 +211,6 @@ public class PuzzleActivity extends BaseActivity {
 		}
 	}
 
-	/*
-	 * ��Ⱦ��ͼ��ѡ���ͼƬ
-	 */
 	private void renderSelectPic(Uri picUri) {
 
 		Intent puzzleImgIntent = new Intent(this, PuzzleImgActivity.class);
@@ -262,19 +218,6 @@ public class PuzzleActivity extends BaseActivity {
 		startActivity(puzzleImgIntent);
 	}
 
-	// @Override
-	// protected void onStop() {
-	// if(exitConfirmDialog == null){
-	// AlertDialog.Builder diagBuilder = new AlertDialog.Builder(this);
-	// diagBuilder.setTitle(R.string.exitTitle);
-	// diagBuilder.setMessage(R.string.ExitConfirm);
-	//
-	// diagBuilder.setNegativeButton(R.string.cancel, imgSelectAction);
-	// exitConfirmDialog = diagBuilder.create();
-	// exitConfirmDialog.
-	// }
-	// super.onStop();
-	// }
 	@Override
 	public void onBackPressed() {
 		exitActivity();
