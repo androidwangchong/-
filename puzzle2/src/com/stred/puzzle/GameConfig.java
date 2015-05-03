@@ -5,9 +5,9 @@ import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
 public class GameConfig {
-	public static  int COLUMNCOUNT = 3;// ƴͼ��ͼ������
-	public static  int ROWCOUNT = 3;// ƴͼ��ͼ������
-	public static  boolean SCALE_SCREEN = true;//�Ƿ���Ⱦ�����Ļ
+	public static  int COLUMNCOUNT = 3;
+	public static  int ROWCOUNT = 3;
+	public static  boolean SCALE_SCREEN = true;
 	public static String DIR_CAPTURE_PIC = null;
 	public static final String CONFIG_FILENAME = "config";
 	private static final String CONFIG_COLUMANCOUNT = "columncount";
