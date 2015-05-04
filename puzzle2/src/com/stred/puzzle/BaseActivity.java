@@ -5,7 +5,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -13,8 +15,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-   
-public class BaseActivity extends ExitActivity {
+
+import com.umeng.analytics.MobclickAgent;
+
+public class BaseActivity extends Activity {
+	private Context mContext;
 	AlertDialog selectImgDialog;
 	static final int REQUEST_CODE_IMG = 0;
 	static final int REQUEST_CODE_CAPTURE = 1;
@@ -23,11 +28,33 @@ public class BaseActivity extends ExitActivity {
 	public static final DateFormat picNameForamt = new SimpleDateFormat(
 			"yyyyMMdd_hhmmss");
 	AlertDialog exitConfirmDialog;
-    protected int exitMsgId = R.string.ExitConfirm;
+	protected int exitMsgId = R.string.ExitConfirm;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		ExitApplication.getInstance().addActivity(this);
 
+		mContext = this;
+		MobclickAgent.setDebugMode(true);
+		// SDK在统计Fragment时，需要关闭Activity自带的页面统计，
+		// 然后在每个页面中重新集成页面统计的代码(包括调用了 onResume 和 onPause 的Activity)。
+		MobclickAgent.openActivityDurationTrack(false);
+		// MobclickAgent.setAutoLocation(true);
+		// MobclickAgent.setSessionContinueMillis(1000);
+		MobclickAgent.updateOnlineConfig(this);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		MobclickAgent.onResume(this);
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		MobclickAgent.onPause(this);
 	}
 
 	/*
@@ -148,5 +175,9 @@ public class BaseActivity extends ExitActivity {
 
 		}
 		exitConfirmDialog.show();
+	}
+
+	public void quit() {
+		ExitApplication.getInstance().exit();
 	}
 }

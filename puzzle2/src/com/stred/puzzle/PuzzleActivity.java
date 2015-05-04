@@ -37,6 +37,7 @@ public class PuzzleActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.welcome);
+		System.out.println("---------------------onCreate---------------------");
 		initComponent();
 		initListener();
 		initConfig();

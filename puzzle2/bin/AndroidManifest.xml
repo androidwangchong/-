@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stred.puzzle"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="10101"
+    android:versionName="1.0.0" >
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
     <!-- 往sdcard中写入数据的权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
     </uses-permission>
     <!-- 在sdcard中创建/删除文件的权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
     </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:icon="@drawable/stage2_1"
@@ -61,13 +59,20 @@
     </application>
 
     <!-- Caution! Do not change this app key. It is only for demo usage. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+
     <meta-data
         android:name="UMENG_APPKEY"
         android:value="5547270867e58e1e0c00462c" >
     </meta-data>
     <meta-data
         android:name="UMENG_CHANNEL"
-        android:value="Umeng" >
-    </meta-data>
+        android:value="Wandoujia" />
 
 </manifest>
