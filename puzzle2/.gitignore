@@ -1,0 +1,10 @@
+/bin
+/gen
+/proguard
+/build
+custom_rules
+.factorypath
+/.settings
+.factorypath
+/apt_generated/
+/.apt_generated/
