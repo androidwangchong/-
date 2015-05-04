@@ -2,9 +2,6 @@ package com.stred.puzzle;
 
 import java.io.File;
 
-import com.qjl.puzzle.R;
-import com.stred.util.screen.ScreenUtil;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -13,13 +10,14 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
-import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
-import android.view.animation.Animation.AnimationListener;
 import android.widget.Button;
 import android.widget.RelativeLayout.LayoutParams;
+
+import com.stred.util.screen.ScreenUtil;
 
 public class PuzzleActivity extends BaseActivity {
 	/** Called when the activity is first created. */

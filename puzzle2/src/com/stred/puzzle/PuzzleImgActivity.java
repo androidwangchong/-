@@ -4,10 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.qjl.puzzle.R;
-import com.stred.util.screen.ScreenUtil;
-
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,6 +25,8 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+
+import com.stred.util.screen.ScreenUtil;
 
 public class PuzzleImgActivity extends BaseActivity {
 	private Bitmap imgBitmapForFit = null;
