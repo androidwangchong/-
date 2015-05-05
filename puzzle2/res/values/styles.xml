@@ -5,4 +5,8 @@
         <item name="android:indeterminateDrawable">@anim/success</item>
     </style>
 
+    <style name="ThemeActivity" mce_bogus="1" parent="android:Theme.Holo">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 </resources>

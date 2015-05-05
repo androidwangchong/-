@@ -2,49 +2,64 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/stage2_1"
+    android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/albumbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/album" >
+            android:background="@drawable/btn_signal"
+            android:text="图库"
+            android:textColor="#ffffff" >
         </Button>
 
         <Button
             android:id="@+id/camerabutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/camera" >
+            android:background="@drawable/btn_signal"
+            android:text="相机"
+            android:textColor="#ffffff" >
         </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/settingbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/setting" >
+            android:background="@drawable/btn_signal"
+            android:text="设置"
+            android:textColor="#ffffff" >
         </Button>
 
         <Button
             android:id="@+id/exitbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/exit" >
+            android:background="@drawable/btn_signal"
+            android:text="退出"
+            android:textColor="#ffffff" >
         </Button>
     </LinearLayout>
+
 </LinearLayout>

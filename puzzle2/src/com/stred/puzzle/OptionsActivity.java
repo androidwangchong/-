@@ -79,9 +79,6 @@ public class OptionsActivity extends BaseActivity {
 
 	}
 
-	/*
-	 * �����úõ����������ظ�ƴͼ����
-	 */
 	private void sendNewLevelBackToPuzzleView() {
 		Intent intent = new Intent();
 		intent.putExtra(PuzzleImgActivity.Extra_COLUMNCOUNT,
@@ -102,9 +99,6 @@ public class OptionsActivity extends BaseActivity {
 
 	}
 
-	/*
-	 * ��ʼ������������ѡ���б�
-	 */
 	private void initAdapter() {
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.columnOrRowcounts,

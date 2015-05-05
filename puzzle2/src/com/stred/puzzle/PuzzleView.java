@@ -330,9 +330,6 @@ public class PuzzleView extends GridView {
 		// 10).show();
 	}
 
-	/*
-	 * ��ʼ��Ҫ��ȾͼƬ��Ƭ��view
-	 */
 	@SuppressLint("ResourceAsColor") private void initLumpViews() {
 		for (int i = 0; i < lumpDrawables.length; i++) {
 

@@ -31,17 +31,17 @@ import com.stred.util.screen.ScreenUtil;
 public class PuzzleImgActivity extends BaseActivity {
 	private Bitmap imgBitmapForFit = null;
 	private Bitmap imgBitmapForScreen = null;
-	private PuzzleView puzzleViewScreen = null;// ����ƴͼ��view ������Ļ
-	private PuzzleView puzzleViewFit = null;//����ƴͼ��view ����ʴ�С
-	private Uri imgUri = null;// ƴͼ����ͼƬ��Uri
-	private View puzzleLaoyut;//ƴͼ��view ���а���������Ļ��һ��vew������ʴ�С��һ��view
+	private PuzzleView puzzleViewScreen = null;
+	private PuzzleView puzzleViewFit = null;
+	private Uri imgUri = null;
+	private View puzzleLaoyut;
 	private static DisplayMetrics screenMetric = null;
 	private static BitmapFactory.Options bitmapOptions;
-	private ImageView originalPicView = null;// ��ʾԭʼͼƬ��view
+	private ImageView originalPicView = null;
 	private Menu menu;
-    private boolean scaleScreen = GameConfig.SCALE_SCREEN;//�Ƿ�������Ļ
-    private PuzzleView puzzleView;//���õ�ǰƴͼ��view
-    private boolean showBadge = false;//�Ƿ���ʾͼƬ���
+    private boolean scaleScreen = GameConfig.SCALE_SCREEN;
+    private PuzzleView puzzleView;
+    private boolean showBadge = false;
     private static final int REQUESTCODE_CHANGELEVEL = 3;
     public static String FROM_PUZZLEVIEW_VAR = "frompuzzlevar";
     public static final String Extra_ROWCOUNT = "optionrowcount";
@@ -79,7 +79,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		if (screenMetric == null)
 			screenMetric = ScreenUtil.getScreenSize(this);
 
-		requestWindowFeature(Window.FEATURE_NO_TITLE);// ȥ��������
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		bitmapOptions.inPreferredConfig = Bitmap.Config.ARGB_4444;
@@ -88,17 +88,13 @@ public class PuzzleImgActivity extends BaseActivity {
 
 	}
 
-	/*
-	 * ��ʼ��ƴͼ��view
-	 */
+	
 	private void initPuzzleView() {
 		puzzleView.renderPuzzleImage(this.isScaleScreen()?imgBitmapForScreen:imgBitmapForFit,null,null);
 
 	}
 
-	/*
-	 * ��ʼ����Ҫ����ƴͼ��ͼƬ��bitmap
-	 */
+	
 	private void initPuzzlePic() {
 		Bundle extras = getIntent().getExtras();
 		imgUri = (Uri) extras.get(PuzzleActivity.KEY_BITMAPEXTRAS);
@@ -106,24 +102,20 @@ public class PuzzleImgActivity extends BaseActivity {
 
 	}
 
-	/*
-	 * ��ʼ����Ҫƴͼ��ͼƬ��bitmap
-	 */
+	
 	private void initSourceBitmap() {
 		InputStream inputStream = null;
 		try {
 			inputStream = getContentResolver().openInputStream(imgUri);
 			bitmapOptions.inJustDecodeBounds = true;
 			bitmapOptions.inSampleSize = 1;
-			// ��ȡͼƬ�Ĵ�С
+			
 			BitmapFactory.decodeStream(inputStream, null, bitmapOptions);
 			int picWidth = bitmapOptions.outWidth;
 			int picHeight = bitmapOptions.outHeight;
 			
 			boolean rotate = false;
-			/*
-			 * ����Ǻ����ͼ������90����ת
-			 */
+		
 			if(picWidth > picHeight){
 				int tmpwidth = picWidth;
 				picWidth = picHeight;
@@ -132,7 +124,7 @@ public class PuzzleImgActivity extends BaseActivity {
 			}
 			
 		
-			// ��ͼƬ��������
+			
 			int screenWidth = screenMetric.widthPixels / 10;
 			int screenHeight = screenMetric.heightPixels / 10;
 			float scaleW = (float) picWidth / screenWidth;
@@ -206,9 +198,7 @@ public class PuzzleImgActivity extends BaseActivity {
 
 	private ViewGroup mContainer;
 
-	/*
-	 * ��ʼ���ؼ�
-	 */
+	
 	private void initComponent() {
 		puzzleLaoyut = (View) findViewById(R.id.puzzleView);
 		puzzleViewScreen = (PuzzleView)findViewById(R.id.puzzleviewScreen);
@@ -230,9 +220,7 @@ public class PuzzleImgActivity extends BaseActivity {
 
 		});
 	}
-	/*
-	 * ���õ�ǰƴͼ��puzzleview
-	 */
+	
 	private void setPuzzleView(){
 		if(this.isScaleScreen()){
 			puzzleView = puzzleViewScreen;
@@ -248,9 +236,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		 
 	}
 
-	/*
-	 * ����menu
-	 */
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = this.getMenuInflater();
@@ -325,9 +311,7 @@ public class PuzzleImgActivity extends BaseActivity {
 
 		return true;
 	}
-	/*
-	 * ����
-	 */
+	
 	private void startChangeLevelIntent() {
 	 Intent intent = new Intent(this,OptionsActivity.class);
 	 intent.putExtra(FROM_PUZZLEVIEW_VAR, "true");
@@ -380,9 +364,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		}
 		}
 	}
-	/*
-	 * ��Ⱦ�µ�ͼƬ
-	 */
+	
 	private void renderNewImage(Uri imgUri){
 		this.imgUri = imgUri;
 		 initSourceBitmap();
@@ -393,9 +375,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		 initPuzzleView();
 		
 	}
-	/*
-	 * ��ʾƴͼview
-	 */
+	
 	private void showPuzzleView(){
 		applyRotation(false, 180, 90);
 		menu.findItem(R.id.displayPuzzleView).setVisible(false);
@@ -403,9 +383,7 @@ public class PuzzleImgActivity extends BaseActivity {
 	}
   
 
-	/*
-     * ��ͼƬ��ȾΪ���ʴ�С
-     */
+	
 	private void scaleImgFit() {
 		 
 		 initScalScreenMenu(false);
@@ -436,9 +414,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		 menu.findItem(R.id.scaleFit).setVisible(isScreen);
 		 menu.findItem(R.id.scaleScreen).setVisible(!isScreen);
 	}
-	/*
-	 * ��ͼƬ��ȾΪ�����Ļ
-	 */
+	
 	private void scaleImgScreen(){
 		 initScalScreenMenu(true);
 		 this.setScaleScreen(true);
@@ -456,9 +432,7 @@ public class PuzzleImgActivity extends BaseActivity {
 		 initBadeAfterChagne();
 	}
 
-	/*
-	 * ���¿�ʼ��Ϸ
-	 */
+	
 	private void restartGame() {
 		puzzleView.resetEmpayPosition();
 		puzzleView.wrapposition();

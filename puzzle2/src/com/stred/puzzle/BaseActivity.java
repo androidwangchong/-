@@ -87,9 +87,6 @@ public class BaseActivity extends Activity {
 
 	}
 
-	/*
-	 * �����������ȡ�µ�ͼƬ����ƴͼ
-	 */
 	void startCaptureActivity() {
 		if (GameConfig.DIR_CAPTURE_PIC == null) {
 			AlertDialog.Builder diagBuilder = new AlertDialog.Builder(this);
@@ -106,9 +103,6 @@ public class BaseActivity extends Activity {
 
 	}
 
-	/*
-	 * ��ȡ�µ�ͼƬ��URI
-	 */
 	Uri getNewPicUri() {
 		String currPicName = GameConfig.CAPTURE_PIC_PREFIX
 				+ picNameForamt.format(new Date());
@@ -124,9 +118,6 @@ public class BaseActivity extends Activity {
 		return Uri.fromFile(f);
 	}
 
-	/*
-	 * ��ʼ�������������Ƭ�ı���Ŀ¼
-	 */
 	void initCapturePicDir() {
 		try {
 			String dir = Environment
@@ -143,9 +134,6 @@ public class BaseActivity extends Activity {
 
 	}
 
-	/*
-	 * ��ͼ��ѡ��
-	 */
 	void startImgContentActivity() {
 		Intent imgIntent = new Intent(Intent.ACTION_GET_CONTENT);
 		imgIntent.addCategory(Intent.CATEGORY_OPENABLE);
