@@ -131,7 +131,7 @@ public class BaseActivity extends Activity {
 		try {
 			String dir = Environment
 					.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-					+ File.separator + "qjl_puzzle";
+					+ File.separator + "stred_puzzle";
 			File file = new File(dir);
 			if (!file.exists()) {
 				file.mkdir();
