@@ -60,13 +60,8 @@
         </activity>
         <!-- Caution! Do not change this app key. It is only for demo usage. -->
 
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="5547501067e58eb16c0022b8" >
-        </meta-data>
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="default" />
+        <meta-data            android:name="UMENG_APPKEY"            android:value="5547501067e58eb16c0022b8" >        </meta-data>
+        <meta-data            android:name="UMENG_CHANNEL"            android:value="default" />
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >

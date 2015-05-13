@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, PuzzleActivity!</string>
-    <string name="app_name">拼图</string>
+    <string name="app_name">超级拼图</string>
     <string name="startGame">开始游戏</string>
     <string name="gameHelp">游戏帮助</string>
     <string name="gameOptions">游戏设置</string>

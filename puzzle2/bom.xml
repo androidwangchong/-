@@ -17,17 +17,19 @@
 	</repositories>
 	<package>
 		<!-- 不区分大小写，逗号隔开的metaName,代表不同SDK的渠道标识符 -->
-		<channels keyname="UMENG_CHANNEL,gfan_cpid">
+		<channels keyname="UMENG_CHANNEL">
 			<!-- channel的数量代表最终生成的apk文件的数量 -->
-			<channel value="hiapk.com" />
+			<channel value="360" />
+			<!-- 
 			<channel value="andao007.com" />
 			<channel value="domob.cn" />
 			<channel value="gfan.com" />
+			 -->
 		</channels>
-		<keystore path="F:\Repos\android\keystore\common\common.key" passwd="123456">
-			<alias name="marsor_common" passwd="123456" />
+		<keystore path="C:\Users\Administrator\git\pintuyouxi\puzzle2\android.keystore" passwd="wangchong">
+			<alias name="android.keystore" passwd="wangchong" />
 		</keystore>
-		<outpath value="F:\Repos\android\keystore\output\" />
+		<outpath value="E:\android\output" />
 	</package>	
 </project>
 
