@@ -15,7 +15,7 @@
     </uses-permission>
 
     <application
-        android:icon="@drawable/stage2_1"
+        android:icon="@drawable/app_pintu_icon"
         android:label="@string/app_name"
         android:theme="@style/ThemeActivity" >
         <activity

@@ -1,124 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="#000000"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:background="@drawable/border" >
-
-        <TextView
-            android:id="@+id/opcolumntitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="@string/optionsColumnTitle"
-            android:textColor="#ffffff"
-            android:textSize="18dip" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/opcolumntitle"
-            android:text="@string/optionsColumnLabel"
-            android:textSize="16dip" />
-
-        <Spinner
-            android:id="@+id/columnSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true" >
-        </Spinner>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:background="@drawable/border" >
-
-        <TextView
-            android:id="@+id/oprowtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="@string/optionsRowTitle"
-            android:textColor="#ffffff"
-            android:textSize="18dip" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/oprowtitle"
-            android:text="@string/optionsRowLabel"
-            android:textSize="16dip" />
-
-        <Spinner
-            android:id="@+id/rowSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true" >
-        </Spinner>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/opScaleScreenPanel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:background="@drawable/border" >
-
-        <TextView
-            android:id="@+id/opScaleScreentitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="@string/optionsScaleScreenTitle"
-            android:textColor="#ffffff"
-            android:textSize="18dip" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/opScaleScreentitle"
-            android:text="@string/optionsIsScaleScreenAbleLabel"
-            android:textSize="16dip" />
-
-        <ToggleButton
-            android:id="@+id/scaleScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
-
     <LinearLayout
-        android:id="@+id/opConsolePanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal" >
+        android:layout_centerInParent="true"
+        android:background="#000000"
+        android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/opOkbutton"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="18dip"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/button_ok" />
+            android:background="#000000"
+            android:padding="10dp" >
 
-        <Button
-            android:id="@+id/opCancelbutton"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/opcolumntitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/optionsColumnTitle"
+                android:textColor="#ffffff"
+                android:textSize="18dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/opcolumntitle"
+                android:text="@string/optionsColumnLabel"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <Spinner
+                android:id="@+id/columnSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+            </Spinner>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="18dip"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/cancel" />
+            android:background="#000000"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/oprowtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/optionsRowTitle"
+                android:textColor="#ffffff"
+                android:textSize="18dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/oprowtitle"
+                android:text="@string/optionsRowLabel"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <Spinner
+                android:id="@+id/rowSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+            </Spinner>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/opScaleScreenPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/opScaleScreentitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/optionsScaleScreenTitle"
+                android:textColor="#ffffff"
+                android:textSize="18dip" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/opScaleScreentitle"
+                android:text="@string/optionsIsScaleScreenAbleLabel"
+                android:textColor="#ffffff"
+                android:textSize="16dip" />
+
+            <ToggleButton
+                android:id="@+id/scaleScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/opConsolePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/opOkbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="18dip"
+                android:background="#ffffff"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/button_ok"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/opCancelbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="18dip"
+                android:background="#ffffff"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/cancel"
+                android:textColor="#000000" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

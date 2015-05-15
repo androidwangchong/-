@@ -11,16 +11,15 @@ import org.androidannotations.annotations.ViewById;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
 import com.stred.util.screen.ScreenUtil;
@@ -30,19 +29,19 @@ import com.stred.util.screen.ScreenUtil;
 @EActivity(R.layout.welcome)
 public class PuzzleActivity extends BaseActivity {
 	@ViewById
-	Button camerabutton;
+	RelativeLayout camerabutton;
 	@ViewById
-	Button albumbutton;
+	RelativeLayout albumbutton;
 	@ViewById
-	Button settingbutton;
+	RelativeLayout settingbutton;
 	@ViewById
-	Button exitbutton;
+	RelativeLayout exitbutton;
 	private static DisplayMetrics screenMetric = null;
 	private Animation animationTranslate, animationRotate, animationScale;
 
 	@AfterViews
 	void init() {
-//		initComponent();
+		// initComponent();
 		initListener();
 		initConfig();
 	}
@@ -115,9 +114,10 @@ public class PuzzleActivity extends BaseActivity {
 		return shake;
 
 	}
+
 	protected Animation animTranslate(float toX, float toY,
 			final int marginLeft, final int marginTop, final int marginRight,
-			final int marginBottom, final Button button, long durationMillis) {
+			final int marginBottom, final RelativeLayout button, long durationMillis) {
 
 		animationTranslate = new TranslateAnimation(0, toX, 0, toY);
 		animationTranslate.setAnimationListener(new AnimationListener() {

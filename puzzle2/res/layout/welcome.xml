@@ -11,27 +11,70 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <Button
+        <RelativeLayout
             android:id="@+id/albumbutton"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/btn_signal"
-            android:text="图库"
-            android:textColor="#ffffff" >
-        </Button>
+            android:background="@drawable/photograf_bg" >
 
-        <Button
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#00000000" >
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/photograf" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_centerHorizontal="true"
+                    android:text="图库"
+                    android:textColor="#ffffff"
+                    android:textSize="21sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/camerabutton"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/btn_signal"
-            android:text="相机"
-            android:textColor="#ffffff" >
-        </Button>
+            android:layout_marginRight="10dip"
+            android:background="@drawable/camra_bg" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#00000000" >
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/camra" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_centerHorizontal="true"
+                    android:text="相机"
+                    android:textColor="#ffffff"
+                    android:textSize="21sp" />
+            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -39,27 +82,70 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <Button
+        <RelativeLayout
             android:id="@+id/settingbutton"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/btn_signal"
-            android:text="设置"
-            android:textColor="#ffffff" >
-        </Button>
+            android:background="@drawable/setting_bg" >
 
-        <Button
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#00000000" >
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/setting" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_centerHorizontal="true"
+                    android:text="设置"
+                    android:textColor="#ffffff"
+                    android:textSize="21sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/exitbutton"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginBottom="10dip"
             android:layout_marginLeft="10dip"
-            android:background="@drawable/btn_signal"
-            android:text="退出"
-            android:textColor="#ffffff" >
-        </Button>
+            android:layout_marginRight="10dip"
+            android:background="@drawable/eixt_bg" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#00000000" >
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/eixt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_centerHorizontal="true"
+                    android:text="退出"
+                    android:textColor="#ffffff"
+                    android:textSize="21sp" />
+            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
